@@ -23,7 +23,6 @@ class StoresViewController: UITableViewController {
     }
     
     //MARK: - TableView Datasource Methods
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return stores?.count ?? 1
@@ -54,7 +53,7 @@ class StoresViewController: UITableViewController {
     
     
     //MARK: - TableView Delegate Methods
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToItems", sender: self)
     }
@@ -63,7 +62,7 @@ class StoresViewController: UITableViewController {
         let destinationVC = segue.destination as! ItemsViewController
         
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.selectedCategory = stores?[indexPath.row]
+            destinationVC.selectedStore = stores?[indexPath.row]
         }
     }
     
